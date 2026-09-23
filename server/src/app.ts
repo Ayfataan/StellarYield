@@ -41,6 +41,7 @@ import simulatorRouter from "./routes/simulator";
 import correlationRouter from "./routes/correlation";
 import strategiesRouter from "./routes/strategies";
 import treasuryRouter from "./routes/treasury";
+import contractsRouter from "./routes/contracts";
 import governanceRouter from "./routes/governance";
 import governanceVoteReceiptsRouter from "./routes/governanceVoteReceipts";
 import activityTimelineRouter from "./routes/activityTimeline";
@@ -64,13 +65,7 @@ import momentumRouter from "./routes/momentum";
 import queueRouter from "./routes/queue";
 import vaultActivityRouter from "./routes/vaultActivity";
 import watchlistRouter from "./routes/watchlist";
-import driftRouter from "./routes/drift";
-import portfolioMovementRouter from "./routes/portfolioMovement";
-import digestScheduleRouter from "./routes/digestScheduleSettings";
-import integrationsRouter from "./routes/integrations";
-import stablecoinBasketRouter from "./routes/stablecoinBasket";
-import deltaNeutralRouter from "./routes/deltaNeutral";
-import reconciliationRouter from "./routes/reconciliation";
+import migrationReadinessRouter from "./routes/migrationReadiness";
 
 import { createAuthChallenge, verifyAuthChallenge } from "./utils/stellarAuth";
 import {
@@ -173,6 +168,7 @@ export function createApp() {
   app.use("/api/offramp", offrampRouter);
   app.use("/api/contacts", contactsRouter);
   app.use("/api/rebalances", rebalancesRouter);
+  app.use("/api/vaults/migration-readiness", migrationReadinessRouter);
   app.use("/api/vaults", sharePriceHistoryRouter);
   app.use("/api/vaults", withdrawalPreviewRouter);
   app.use("/api/reliability", reliabilityRouter);
@@ -184,6 +180,7 @@ export function createApp() {
   app.use("/api/audit-archive", eventArchiveRoutes);
   app.use("/api/momentum", momentumRouter);
   app.use("/api/queue", queueRouter);
+  app.use("/api/contracts", contractsRouter);
   app.use("/api/vaults/activity", vaultActivityRouter);
   app.use("/api/watchlist", watchlistRouter);
   app.use("/api/reconciliation", reconciliationRouter);

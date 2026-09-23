@@ -13,7 +13,7 @@ import type { VaultActionAvailabilityMap } from "../hooks/useVaultActionAvailabi
 import { RecoveryAdvisor } from "./AIAdvisor/RecoveryAdvisor";
 import { fetchVaultStats, type VaultStats, formatTvl, validateVaultSlug } from "../lib/vaultData";
 import VaultCapacityWarning, { type VaultCapacityStatus } from "./VaultCapacityWarning";
-import { VaultRiskBadge } from "./common/VaultRiskBadge";
+import VaultMigrationReadinessPanel from "./VaultMigrationReadinessPanel";
 
 /**
  * Injects or updates a <meta> tag in document.head.
@@ -268,6 +268,10 @@ export default function Vault() {
 
       <div className="max-w-3xl w-full text-left">
         <RecoveryAdvisor vaultId={activeSlug} />
+      </div>
+
+      <div className="max-w-3xl w-full text-left">
+        <VaultMigrationReadinessPanel vaultSlug={activeSlug} />
       </div>
 
       <div className="glass-panel p-8 mt-8 max-w-3xl w-full text-left">
