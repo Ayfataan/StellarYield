@@ -77,6 +77,7 @@ import digestScheduleRouter from "./routes/digestScheduleSettings";
 import stablecoinBasketRouter from "./routes/stablecoinBasket";
 import deltaNeutralRouter from "./routes/deltaNeutral";
 import integrationsRouter from "./routes/integrations";
+import preferencesRouter from "./routes/preferences";
 
 import { createAuthChallenge, verifyAuthChallenge } from "./utils/stellarAuth";
 import {
@@ -174,6 +175,7 @@ export function createApp() {
   app.use("/api/treasury", treasuryRouter);
   app.use("/api/governance", governanceRouter);
   app.use("/api/governance", governanceVoteReceiptsRouter);
+  app.use("/api/preferences", preferencesRouter);
   app.use("/api/portfolio/activity", activityTimelineRouter);
   app.use("/api/portfolio/reconcile", portfolioReconcileRouter);
   app.use("/api/portfolio/import", portfolioImportRouter);

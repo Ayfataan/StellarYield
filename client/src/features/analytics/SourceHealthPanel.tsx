@@ -17,6 +17,7 @@ import {
   hasUnhealthySources,
   type SourceHealthRegistry,
 } from "./sourceHealthStatus";
+import { useCachedFetch } from "../../hooks/useCachedFetch";
 
 export default function SourceHealthPanel() {
   const {

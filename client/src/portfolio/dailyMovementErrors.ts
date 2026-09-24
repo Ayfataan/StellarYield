@@ -102,7 +102,7 @@ export function describeDailyMovementFailure(
     code,
     message: serverMessage ?? known?.message ?? "Failed to fetch daily movement.",
     status,
-    retryable: known?.retryable ?? status >= 500 || status === 0,
+    retryable: known?.retryable ?? (status >= 500 || status === 0),
   };
 }
 

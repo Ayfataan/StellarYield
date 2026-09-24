@@ -22,12 +22,12 @@ export function useDailyMovement({ walletAddress, enabled = true }: UseDailyMove
 
     let isMounted = true;
 
-    async function fetch() {
+    async function load() {
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch(
+        const response = await globalThis.fetch(
           `/api/portfolio/${walletAddress}/daily-movement`
         );
 
@@ -59,7 +59,7 @@ export function useDailyMovement({ walletAddress, enabled = true }: UseDailyMove
       }
     }
 
-    fetch();
+    void load();
 
     return () => {
       isMounted = false;
@@ -84,12 +84,12 @@ export function useDailyMovementHistory(
 
     let isMounted = true;
 
-    async function fetch() {
+    async function load() {
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch(
+        const response = await globalThis.fetch(
           `/api/portfolio/${walletAddress}/movement-history?days=${days}`
         );
 
@@ -113,7 +113,7 @@ export function useDailyMovementHistory(
       }
     }
 
-    fetch();
+    void load();
 
     return () => {
       isMounted = false;

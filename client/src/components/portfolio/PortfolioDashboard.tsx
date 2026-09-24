@@ -19,6 +19,7 @@ import PortfolioImport from "./PortfolioImport";
 import RiskScoreBreakdownPanel from "./RiskScoreBreakdownPanel";
 import FreshnessBadge from "./FreshnessBadge";
 import { computeHoldingFreshness } from "./holdingFreshness";
+import { useDailyMovement } from "../../hooks/useDailyMovement";
 import {
   analyzeConcentration,
   buildExposureBuckets,

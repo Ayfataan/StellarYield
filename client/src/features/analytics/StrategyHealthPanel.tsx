@@ -7,6 +7,7 @@ import { EMPTY_STATE_STRATEGY_HEALTH } from '../../utils/emptyStateCopy';
 import { FreshnessBanner } from "../../components/dashboard/FreshnessBanner";
 import { stableSort } from "../../lib/stableSort";
 import { RISK_CHART_COLORS, CHART_PANEL_BG, CHART_PANEL_AXIS } from "../../components/charts/darkModeContrast";
+import { useCachedFetch } from "../../hooks/useCachedFetch";
 
 // ── Types ───────────────────────────────────────────────────────────────
 

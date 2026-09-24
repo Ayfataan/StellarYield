@@ -33,6 +33,7 @@ import { RISK_EXPLANATIONS, RiskLevel } from "../../config/riskConfig";
 import { VaultRiskBadge } from "../common/VaultRiskBadge";
 import { useDensity } from "../../context/DensityContext";
 import type { DensityMode } from "../../context/DensityContext";
+import { cachedFetch } from "../../lib/cachedFetch";
 
 // ── Types ───────────────────────────────────────────────────────────────
 
